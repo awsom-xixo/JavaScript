@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In</title>
+</head>
+
+<body>
+    <div>
+        Exemplo Div 1
+    </div>
+    <div>
+        Exemplo Div 2
+    </div>
+    <div>
+        Exemplo Div 3
+    </div>
+
+    <script>
+
+        const obj_spread = [...document.getElementsByTagName('div')]; //Pode adicioanr outros tipos aqui
+        console.log(obj_spread)
+
+        //for in
+        for (div in obj_spread) {
+            console.log(obj_spread[div].innerHTML);
+        }
+
+        // for of
+        
+        for (div of obj_spread) {
+            console.log(div);
+        }
+    </script>
+</body>
+
+</html>
