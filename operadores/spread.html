@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comando Spread</title>
+</head>
+
+<body>
+    <div>
+        Exemplo Div 1
+    </div>
+    <div>
+        Exemplo Div 2
+    </div>
+    <div>
+        Exemplo Div 3
+    </div>
+
+    <script>
+        const obj = document.getElementsByTagName('div');  // Não pode adicionar outros tipos aqui
+        console.log(obj)
+
+        const obj_spread = [...document.getElementsByTagName('div')]; //Pode adicioanr outros tipos aqui
+        console.log(obj_spread)
+
+        //obj. Poucas opções
+        //obj_spread. Muitas opções
+
+        obj_spread.forEach(element => {
+            console.log(element.innerText);
+        })
+    </script>
+</body>
+
+</html>
