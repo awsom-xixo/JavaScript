@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetElementByID</title>
+
+    <style>
+        .principal {
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            border: 4px solid #888;
+            padding: 10px;
+            margin: 5px auto;
+            cursor: pointer;
+        }
+
+        .principal:hover {
+            border-color: red;
+        }
+
+        .classe1 {
+            background-color: #ccc;
+            color: #444;
+        }
+
+        .classe1 {
+            background-color: #444;
+            color: #ccc;
+        }
+
+        .destaque {
+            background-color: #5b5e65 !important;
+            color: #e0e0e1 !important;
+            border-color: rgb(64, 64, 222) !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="principal classe1">Teste</div>
+    <div class="principal classe1">Abacaxi</div>
+    <div class="principal classe1">Xixo</div>
+    <div class="principal classe1">Vitor</div>
+    <div class="principal classe1">96.3</div>
+    <div class="principal classe1">(hed) p.e.</div>
+
+    <div class="principal classe2">Teste</div>
+    <div class="principal classe2">Abacaxi</div>
+    <div class="principal classe2">Xixo</div>
+    <div class="principal classe2">Vitor</div>
+    <div class="principal classe2">96.3</div>
+    <div class="principal classe2">(hed) p.e.</div>
+
+    <script>
+        const todosPrincipal = [...document.getElementsByClassName("principal")];
+        const todosC1 = [...document.getElementsByClassName("classe1")];
+        const todosC2 = [...document.getElementsByClassName("classe2")];
+        console.log(todosPrincipal);
+        console.log(todosC1);
+        console.log(todosC2);
+
+        todosC2.map((el, i)=>{
+            if (i==2 || i==4){
+                el.classList.add('destaque')
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetElementByID</title>
+</head>
+<body>
+    <div id="div1">Teste</div>
+    <div id="div2">Abacaxi</div>
+    <div id="div3">Xixo</div>
+    <div id="div4">Vitor</div>
+    <div id="div5">96.3</div>
+    <div id="div6">(hed) p.e.</div>
+
+    <script>
+        const d1 = document.getElementById('div1');
+        const d2 = document.getElementById('div2');
+        const d3 = document.getElementById('div3');
+        const d4 = document.getElementById('div4');
+        const d5 = document.getElementById('div5');
+        const d6 = document.getElementById('div6');
+        console.log(d1);
+        console.log(d1.id);
+        console.log(d1.innerHTML);
+
+        d1.innerHTML = `<h1>JavaScript<?h1>`
+
+        const arrayDivs = [
+            d1, d2, d3, d4, d5, d6
+        ]
+
+        console.log(arrayDivs)
+
+        arrayDivs.forEach(div => {
+            div.innerHTML = '<h1>Alterando vários elementos</h1>'
+        });
+
+        arrayDivs.map((el) =>{
+            el.innerHTML = '<p>Map também funciona, apesar de não ser o ideal.</p>'
+        });
+        
+    </script>
+</body>
+</html>

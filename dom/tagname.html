@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetElementByID</title>
+</head>
+<body>
+    <div id="div1">Teste</div>
+    <div id="div2">Abacaxi</div>
+    <div id="div3">Xixo</div>
+    <div id="div4">Vitor</div>
+    <div id="div5">96.3</div>
+    <div id="div6">(hed) p.e.</div>
+
+    <script>
+        const arrayIds = [
+            document.getElementById('div1'),
+            document.getElementById('div2'),
+            document.getElementById('div3'),
+            document.getElementById('div4'),
+            document.getElementById('div5'),
+            document.getElementById('div6')
+        ];
+        const colecaoHTML = document.getElementsByTagName('div');
+
+        console.log(arrayIds);      // retorna um tipo Array
+        console.log(colecaoHTML);   // retorna um tipo HTMLCollection, tem muito menos métodos
+
+        // .map não funciona na colecaoHTML. 
+        // Para resolver isso, usamos spread:
+
+        // const arrayHTML = [document.getElementsByTagName('div')]; Gera um Array [HTMLCollection]
+        // console.log(arrayHTML);
+
+        // ou:
+
+        let arrayHTML = document.getElementsByTagName('div');
+        arrayHTML = [...arrayHTML];                                // Gera um array normal
+        console.log(arrayHTML);
+
+        arrayHTML.map((el)=>{
+            console.log(el);
+        });
+
+
+    </script>
+</body>
+</html>
