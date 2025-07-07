@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+
+    <style>
+        .principal {
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            border: 4px solid #888;
+            padding: 10px;
+            margin: 5px auto;
+            cursor: pointer;
+        }
+
+        .principal:hover {
+            border-color: red;
+        }
+
+        .classe1 {
+            background-color: #ccc;
+            color: #444;
+        }
+
+        .classe1 {
+            background-color: #444;
+            color: #ccc;
+        }
+
+        .destaque {
+            background-color: #5b5e65 !important;
+            color: #e0e0e1 !important;
+            border-color: rgb(64, 64, 222) !important;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+    <div class="principal classe1">Teste</div>
+    <div class="principal classe1">Abacaxi</div>
+    <div class="principal classe1">Xixo</div>
+    <div class="principal classe1">Vitor</div>
+    <div class="principal classe1">96.3</div>
+    <div class="principal classe1">(hed) p.e.</div>
+
+    <div class="principal classe2">Teste</div>
+    <div class="principal classe2">Abacaxi</div>
+    <div class="principal classe2">Xixo</div>
+    <div class="principal classe2">Vitor</div>
+    <div class="principal classe2">96.3</div>
+    <div class="principal classe2">(hed) p.e.</div>
+    <p>
+        JavaScript é A <strong>MELHOR LINGUAGEM</strong>
+    </p>
+
+    <script>
+        
+        const queryDivs = document.querySelector('div');                    // Retorna a primeira <div> que encontrar
+        console.log(queryDivs);                                             // Imprime uma única <div>
+
+        const queryDivsAll = document.querySelectorAll('div');              // Retorna TODAS as <div>s que encontrar
+        console.log(queryDivsAll);                                          // Imprime uma NodeList de <div>
+
+        const todosPrincipal = [...document.querySelectorAll('.principal')];
+        console.log(todosPrincipal);
+
+        const todosClasse1 = [...document.querySelectorAll('.classe1')];
+        console.log(todosClasse1);
+
+        const classe2Destaque = document.querySelectorAll('.classe2')[2];   // Pegar à partir do índice com []
+        classe2Destaque.classList.add('destaque');
+
+
+        const destaqueExemplo = [...document.querySelectorAll('h1, p')];
+
+        destaqueExemplo.forEach(element => {
+            element.classList.add('destaque');
+        });
+
+        /*
+        MAIS EXEMPLOS:
+
+        const queryDivsAll = document.querySelectorAll('div[class]');       // Todas as <div> com classes
+        const queryDivsAll = document.querySelectorAll('div,p');            // Todas as <div> e <p>
+        const queryDivsAll = document.querySelectorAll('div > p');          // Todas as <div> pai direto de <p> 
+        const queryDivsAll = document.querySelectorAll('div p');            // Todas as <div> pai de <p> em qualquer nível 
+        */
+
+    </script>
+</body>
+</html>

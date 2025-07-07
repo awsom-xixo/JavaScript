@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>className</title>
-
+    <title>Eventos</title>
     <style>
         .principal {
             display: flex;
@@ -48,25 +47,28 @@
 
     <div class="principal classe2">Teste</div>
     <div class="principal classe2">Abacaxi</div>
-    <div class="principal classe2">Xixo</div>
+    <div id="xixo" class="principal classe2">Xixo</div>
     <div class="principal classe2">Vitor</div>
     <div class="principal classe2">96.3</div>
     <div class="principal classe2">(hed) p.e.</div>
 
     <script>
-        const todosPrincipal = [...document.getElementsByClassName("principal")];
-        const todosC1 = [...document.getElementsByClassName("classe1")];
-        const todosC2 = [...document.getElementsByClassName("classe2")];
-        console.log(todosPrincipal);
-        console.log(todosC1);
-        console.log(todosC2);
+        // const botaoXixo = document.getElementById('xixo');
 
-        todosC2.map((el, i)=>{
-            if (i==2 || i==4){
-                el.classList.add('destaque')
-            }
+        // botaoXixo.addEventListener('click', (evt)=>{
+        //     let el = evt.target;
+        //     el.classList.toggle('destaque');
+        // });
+
+        const divsTodas = [...document.getElementsByTagName('div')];
+
+        divsTodas.forEach(div => {
+            div.addEventListener('click', (evt)=>{
+                let elemento = evt.target;
+                elemento.classList.toggle('destaque');
+                console.log(`Click em ${elemento.innerText}.`)
+            });          
         });
-
     </script>
 </body>
 </html>
