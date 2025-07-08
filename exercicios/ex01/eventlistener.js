@@ -16,15 +16,15 @@ botaoCopiar.addEventListener('click', (evento) => {
     const cursosSelec1 = [...document.querySelectorAll('#caixa1 div.selecao')];
     const cursosSelec2 = [...document.querySelectorAll('#caixa2 div.selecao')];
 
-    if(cursosSelec1 == [] && cursosSelec1 == []) return;
+    if(cursosSelec1.length == 0 && cursosSelec1.length == 0) return;
 
-    if (!(cursosSelec1 == [])) {
+    if (!(cursosSelec1.length == 0)) {
         cursosSelec1.forEach(selecao => {
             caixa2.appendChild(selecao);        
         });
     };
 
-    if (!(cursosSelec1 == [])) {
+    if (!(cursosSelec1.length == 0)) {
         cursosSelec2.forEach(selecao => {
             caixa1.appendChild(selecao);        
         });
