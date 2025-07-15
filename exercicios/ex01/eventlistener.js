@@ -37,11 +37,17 @@ botaoCopiar.addEventListener('click', (evento) => {
     const cursosSelecionados = [...document.querySelectorAll('div.selecao')];
     const cursosNaoSelecionados = [...document.querySelectorAll('.curso:not(.selecao)')];
 
-    cursosSelecionados.forEach(curso => {
-        caixa2.appendChild(curso);
-    });
+    if(cursosSelec1.length == 0 && cursosSelec1.length == 0) return;
 
-    cursosNaoSelecionados.forEach(curso => {
-        caixa1.appendChild(curso);
-    });
+    if (!(cursosSelec1.length == 0)) {
+        cursosSelec1.forEach(selecao => {
+            caixa2.appendChild(selecao);        
+        });
+    };
+
+    if (!(cursosSelec1.length == 0)) {
+        cursosSelec2.forEach(selecao => {
+            caixa1.appendChild(selecao);        
+        });
+    };
 });
