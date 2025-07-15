@@ -12,21 +12,36 @@ cursos.forEach(curso => {
     });
 });
 
+// MINHA SOLUÇÃO PROPOSTA:
+// botaoCopiar.addEventListener('click', (evento) => {
+//     const cursosSelec1 = [...document.querySelectorAll('#caixa1 div.selecao')];
+//     const cursosSelec2 = [...document.querySelectorAll('#caixa2 div.selecao')];
+
+//     if (cursosSelec1.length === 0 && cursosSelec2.length === 0) return;
+//
+//     if (cursosSelec1.length > 0) {
+//         cursosSelec1.forEach(selecao => {
+//             caixa2.appendChild(selecao);        
+//         });
+//     };
+
+//     if (cursosSelec1.length > 0) {
+//         cursosSelec2.forEach(selecao => {
+//             caixa1.appendChild(selecao);        
+//         });
+//     };
+// });
+
+// SOLUÇÃO DO EXERCÍCIO:
 botaoCopiar.addEventListener('click', (evento) => {
-    const cursosSelec1 = [...document.querySelectorAll('#caixa1 div.selecao')];
-    const cursosSelec2 = [...document.querySelectorAll('#caixa2 div.selecao')];
+    const cursosSelecionados = [...document.querySelectorAll('div.selecao')];
+    const cursosNaoSelecionados = [...document.querySelectorAll('.curso:not(.selecao)')];
 
-    if(cursosSelec1 == [] && cursosSelec1 == []) return;
+    cursosSelecionados.forEach(curso => {
+        caixa2.appendChild(curso);
+    });
 
-    if (!(cursosSelec1 == [])) {
-        cursosSelec1.forEach(selecao => {
-            caixa2.appendChild(selecao);        
-        });
-    };
-
-    if (!(cursosSelec1 == [])) {
-        cursosSelec2.forEach(selecao => {
-            caixa1.appendChild(selecao);        
-        });
-    };
+    cursosNaoSelecionados.forEach(curso => {
+        caixa1.appendChild(curso);
+    });
 });
