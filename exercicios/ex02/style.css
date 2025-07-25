@@ -4,6 +4,10 @@
     border: none;
 }
 
+input[type=text] {
+    border: 1px solid black;
+}
+
 main {
     display: flex;
     justify-content: center;
